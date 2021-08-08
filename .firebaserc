@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "gymstatus-19a75": {
+      "hosting": {
+        "app": [
+          "gymstatus-19a75"
+        ]
+      }
+    }
+  }
+}

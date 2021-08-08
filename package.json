@@ -16,17 +16,22 @@
     "@angular/common": "~12.1.1",
     "@angular/compiler": "~12.1.1",
     "@angular/core": "~12.1.1",
+    "@angular/fire": "^6.1.5",
     "@angular/forms": "~12.1.1",
     "@angular/platform-browser": "~12.1.1",
     "@angular/platform-browser-dynamic": "~12.1.1",
     "@angular/router": "~12.1.1",
     "@capacitor/core": "3.1.2",
+    "@ionic-native/sms": "^5.35.0",
     "@ionic/angular": "^5.5.2",
+    "firebase": "^8.9.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
+    "underscore": "^1.13.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/architect": ">= 0.900 < 0.1300",
     "@angular-devkit/build-angular": "~12.1.1",
     "@angular-eslint/builder": "~12.0.0",
     "@angular-eslint/eslint-plugin": "~12.0.0",
@@ -43,21 +48,51 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",
+    "cordova-android": "^9.1.0",
+    "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.0.5",
+    "cordova-plugin-ionic-webview": "^4.0.0",
+    "cordova-plugin-splashscreen": "5.0.2",
+    "cordova-plugin-statusbar": "2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-sms-plugin": "^1.0.1",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-prefer-arrow": "1.2.2",
+    "firebase-tools": "^8.0.0 || ^9.0.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1",
     "jasmine-core": "~3.8.0",
     "jasmine-spec-reporter": "~5.0.0",
+    "jsonc-parser": "^3.0.0",
     "karma": "~6.3.2",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "open": "^7.0.3",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "typescript": "~4.2.4"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-sms-plugin": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
 }

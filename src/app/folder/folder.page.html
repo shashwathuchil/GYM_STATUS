@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">{{ folder }}</ion-title>
@@ -18,4 +18,60 @@
     <strong class="capitalize">{{ folder }}</strong>
     <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+</ion-content> -->
+
+<!-- <ion-content>
+  <ion-list id="labels-list">
+    <ion-list-header>Labels</ion-list-header>
+
+    <ion-item *ngFor="let label of item$ | async as list">
+      <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+      <ion-label>{{ label.name }}</ion-label>
+
+
+    </ion-item>
+  </ion-list>
+</ion-content> -->
+
+<ion-content>
+
+<ion-card *ngFor="let label of item$ | async as list">
+  <ion-card-header>
+    <!-- <ion-card-subtitle>{{label.name}}</ion-card-subtitle> -->
+    <ion-card-title>{{label.name}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Hi, {{label.name}}. It’s Deekshith with The Dynamic Fitness Garage. Just a
+    reminder that your next fee payment will be on {{getDate(label.Date)}}.
+    If you have any questions, just reply to this message!
+  </ion-card-content>
+  <ion-card-content>
+    <ion-button color="primary">Send</ion-button>
+    <ion-button color="secondary">Payed</ion-button>
+  </ion-card-content>
+  <ion-card-content>
+  </ion-card-content>
+</ion-card>
+<!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    Send All
+  </ion-fab-button>
+</ion-fab> -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="share"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button>
+      <ion-icon name="paper-plane"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="presentModal()">
+      <ion-icon name="person-add"></ion-icon>
+    </ion-fab-button>
+    <!-- <ion-fab-button>
+      <ion-icon name="logo-twitter"></ion-icon>
+    </ion-fab-button> -->
+  </ion-fab-list>
+</ion-fab>
 </ion-content>
