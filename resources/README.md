@@ -6,3 +6,6 @@ Cordova reference documentation:
 
 - Icons: https://cordova.apache.org/docs/en/latest/config_ref/images.html
 - Splash Screens: https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/
+
+<!-- include this in manifest file for sms -->
+<!-- <uses-permission android:name="android.permission.SEND_SMS"/> -->

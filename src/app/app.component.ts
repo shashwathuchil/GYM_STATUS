@@ -30,7 +30,12 @@ export class AppComponent {
     this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.SEND_SMS).then(
       (result) => {
         console.log('Has permission?', result.hasPermission);
-        this.alertSvc.alert("success"+JSON.stringify(result));
+        if(result.hasPermission){
+          this.alertSvc.alert("success"+JSON.stringify(result));
+        } else{
+          this.alertSvc.alert("error"+JSON.stringify(result));
+          this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.SEND_SMS);
+        }
       }
     ).catch((err) => {
       this.alertSvc.alert("error"+err+this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.SEND_SMS));

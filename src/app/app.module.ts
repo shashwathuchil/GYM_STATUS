@@ -14,13 +14,15 @@ import { ModalPageComponent } from './modal-page/modal-page.component';
 
 import { SMS } from '@ionic-native/sms/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+
 import { AlertService } from './service/alert.service';
+import { MessageService } from './service/message.service';
 
 @NgModule({
   declarations: [AppComponent,SideBarComponent, ModalPageComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(environment.firebase)],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },SMS,AndroidPermissions,AlertService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },SMS,AndroidPermissions,AlertService, MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
