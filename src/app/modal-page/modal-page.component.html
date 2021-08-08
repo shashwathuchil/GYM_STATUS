@@ -1,3 +1,59 @@
-<ion-button (click)="dismiss()">
-  dismiss
-</ion-button>
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="end" (click)="dismiss()">
+        <!-- <ion-back-button></ion-back-button> -->
+        <ion-icon name="close-circle-outline" size="large"></ion-icon>
+      </ion-buttons>
+      <ion-title>Add New Gym Joinee</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-label position="floating">Enter SL number</ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Enter Name</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Enter Id</ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Mobile Number</ion-label>
+    <ion-input type="text" maxlength="10" pattern="tel"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Joining Date</ion-label>
+    <ion-input type="date" placeholder=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Renewal Date</ion-label>
+    <ion-input type="date" placeholder=""></ion-input>
+  </ion-item>
+  <!-- <ion-input placeholder="Enter SL number" type="number"></ion-input>
+  <ion-input placeholder="Name"></ion-input>
+  <ion-input placeholder="id" type="number"></ion-input> -->
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      <ion-button color="success">
+        Submit
+      </ion-button>
+      <ion-button color="medium">
+        Clear
+      </ion-button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

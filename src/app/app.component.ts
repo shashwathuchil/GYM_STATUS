@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { AlertService } from './service/alert.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -17,9 +20,21 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor(firestore: AngularFirestore) {
+  constructor(firestore: AngularFirestore,private androidPermissions: AndroidPermissions,
+    private alertSvc: AlertService) {
     this.item$ = firestore.collection('items').valueChanges();
     console.log(this.item$,firestore.collection('items') );
-
+    this.initApp();
+  }
+  initApp() {
+    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.SEND_SMS).then(
+      (result) => {
+        console.log('Has permission?', result.hasPermission);
+        this.alertSvc.alert("success"+JSON.stringify(result));
+      }
+    ).catch((err) => {
+      this.alertSvc.alert("error"+err+this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.SEND_SMS));
+      this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.SEND_SMS);
+    });
   }
 }

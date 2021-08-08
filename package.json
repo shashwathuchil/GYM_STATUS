@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~12.1.1",
     "@angular/router": "~12.1.1",
     "@capacitor/core": "3.1.2",
+    "@ionic-native/android-permissions": "^5.35.0",
     "@ionic-native/sms": "^5.35.0",
     "@ionic/angular": "^5.5.2",
     "firebase": "^8.9.0",
@@ -49,6 +50,7 @@
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",
     "cordova-android": "^9.1.0",
+    "cordova-plugin-android-permissions": "^1.1.2",
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^4.0.0",
@@ -89,7 +91,8 @@
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-sms-plugin": {}
+      "cordova-sms-plugin": {},
+      "cordova-plugin-android-permissions": {}
     },
     "platforms": [
       "android"
