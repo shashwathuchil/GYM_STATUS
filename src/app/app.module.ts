@@ -17,12 +17,14 @@ import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 import { AlertService } from './service/alert.service';
 import { MessageService } from './service/message.service';
+import { DataService } from './service/data.service';
 
 @NgModule({
-  declarations: [AppComponent,SideBarComponent, ModalPageComponent],
+  declarations: [AppComponent, SideBarComponent, ModalPageComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(environment.firebase)],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },SMS,AndroidPermissions,AlertService, MessageService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    SMS, AndroidPermissions, AlertService, DataService, MessageService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
